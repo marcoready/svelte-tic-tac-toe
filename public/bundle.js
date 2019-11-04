@@ -448,7 +448,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (53:0) {:else}
+    // (59:0) {:else}
     function create_else_block(ctx) {
     	var h3, t;
 
@@ -457,7 +457,7 @@ var app = (function () {
     			h3 = element("h3");
     			t = text(ctx.status);
     			attr_dev(h3, "class", "svelte-e3nqe2");
-    			add_location(h3, file$1, 53, 2, 1232);
+    			add_location(h3, file$1, 59, 2, 1238);
     		},
 
     		m: function mount(target, anchor) {
@@ -477,11 +477,11 @@ var app = (function () {
     			}
     		}
     	};
-    	dispatch_dev("SvelteRegisterBlock", { block, id: create_else_block.name, type: "else", source: "(53:0) {:else}", ctx });
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_else_block.name, type: "else", source: "(59:0) {:else}", ctx });
     	return block;
     }
 
-    // (51:0) {#if winner}
+    // (57:0) {#if winner}
     function create_if_block_1(ctx) {
     	var h3, t;
 
@@ -490,7 +490,7 @@ var app = (function () {
     			h3 = element("h3");
     			t = text(ctx.winner);
     			attr_dev(h3, "class", "svelte-e3nqe2");
-    			add_location(h3, file$1, 51, 2, 1204);
+    			add_location(h3, file$1, 57, 2, 1210);
     		},
 
     		m: function mount(target, anchor) {
@@ -510,11 +510,11 @@ var app = (function () {
     			}
     		}
     	};
-    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_1.name, type: "if", source: "(51:0) {#if winner}", ctx });
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_1.name, type: "if", source: "(57:0) {#if winner}", ctx });
     	return block;
     }
 
-    // (58:4) {#each squares as square, i}
+    // (64:4) {#each squares as square, i}
     function create_each_block(ctx) {
     	var current;
 
@@ -563,11 +563,11 @@ var app = (function () {
     			destroy_component(square, detaching);
     		}
     	};
-    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block.name, type: "each", source: "(58:4) {#each squares as square, i}", ctx });
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block.name, type: "each", source: "(64:4) {#each squares as square, i}", ctx });
     	return block;
     }
 
-    // (63:0) {#if winner}
+    // (69:0) {#if winner}
     function create_if_block(ctx) {
     	var button, dispose;
 
@@ -575,7 +575,7 @@ var app = (function () {
     		c: function create() {
     			button = element("button");
     			button.textContent = "Restart Game";
-    			add_location(button, file$1, 63, 2, 1412);
+    			add_location(button, file$1, 69, 2, 1418);
     			dispose = listen_dev(button, "click", ctx.restartGame);
     		},
 
@@ -591,7 +591,7 @@ var app = (function () {
     			dispose();
     		}
     	};
-    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block.name, type: "if", source: "(63:0) {#if winner}", ctx });
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block.name, type: "if", source: "(69:0) {#if winner}", ctx });
     	return block;
     }
 
@@ -634,7 +634,7 @@ var app = (function () {
     			if (if_block1) if_block1.c();
     			if_block1_anchor = empty();
     			attr_dev(div, "class", "board svelte-e3nqe2");
-    			add_location(div, file$1, 56, 0, 1257);
+    			add_location(div, file$1, 62, 0, 1263);
     		},
 
     		l: function claim(nodes) {
@@ -759,12 +759,14 @@ var app = (function () {
         [0, 4, 8],
         [2, 4, 6]
       ];
+
       for (let i = 0; i < winningCombo.length; i++) {
         const [a, b, c] = winningCombo[i];
         if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c])
           return `Winner: ${squares[a]}`;
       }
       const isDraw = squares.every(square => square !== null);
+
       return isDraw ? "It's a draw" : null;
     }
 
@@ -772,11 +774,13 @@ var app = (function () {
     	let winner = null;
       let squares = [null, null, null, null, null, null, null, null, null];
       let xIsNext = true;
+
       function restartGame() {
         $$invalidate('squares', squares = [null, null, null, null, null, null, null, null, null]);
         $$invalidate('xIsNext', xIsNext = true);
         $$invalidate('winner', winner = null);
       }
+
       function handleClick(i) {
         if (!squares[i]) {
           $$invalidate('squares', squares[i] = xIsNext ? "X" : "0", squares);
