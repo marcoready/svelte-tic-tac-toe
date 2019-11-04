@@ -1,6 +1,9 @@
-*Psst — looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)*
 
 ---
+# Demo Tic Tac Toe using svelte
+
+The purpose of this project it's just to demo the svelte framework.
+The project was built by following this [tutorial](https://www.sitepoint.com/svelte-tic-tac-toe/).
 
 # svelte app
 
