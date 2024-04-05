@@ -1,6 +1,6 @@
 <script>
 	import Board from "./Board.svelte";
-	const title = "Tic Tac Toe";
+	const title = "Tic Tac Toe Yeah";
 </script>
 
 <svelte:head>
